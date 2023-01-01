@@ -45,3 +45,15 @@ func Ints2TreeNode(ints []int) *TreeNode {
 
 	return root 
 }
+
+// T2s converts *TreeNode to *[]int
+// preorder? 
+func T2s(head *TreeNode, array *[]int) {
+	*array = append(*array, head.Val)
+	if head.Left != nil {
+		T2s(head.Left, array)
+	}
+	if head.Right != nil {
+		T2s(head.Right, array)
+	}
+}
